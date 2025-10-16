@@ -16,3 +16,7 @@ Content-Type: application/json
     "email":"asl.narvaez@yavirac.edu.ec",
     "password":"1234567"
 }
+
+### Users
+
+GET http://127.0.0.1:3000/users
