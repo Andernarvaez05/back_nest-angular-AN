@@ -1,4 +1,5 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, OneToOne, PrimaryGeneratedColumn} from "typeorm";
+import { Persona } from "../../persona/entities/persona.entity";
 
 @Entity()
 export class User {
@@ -9,6 +10,9 @@ export class User {
     mail:string;
 
     @Column()
-    password:string;
+    password:string;    
+
+    @OneToOne(() => Persona, persona => persona.user, {cascade:true})
+    persona: Persona
 
 }
